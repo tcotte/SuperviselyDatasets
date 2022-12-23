@@ -1,0 +1,10 @@
+{
+    "classes": [
+        {
+            "title": "duckweed",
+            "shape": "rectangle",
+            "color": "#BE55CE",
+            "geometry_config": {}
+        }
+    ]
+}
