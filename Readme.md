@@ -4,7 +4,7 @@ Convert datasets into Supervise.ly format to labellise a 2nd time in this platfo
 
 ### Installation (with Anaconda3)
 ```
-git clone
+git clone https://github.com/tcotte/SuperviselyDatasets.git
 conda create -n sly python=3.8
 conda activate sly
 pip install requirements.txt
@@ -29,12 +29,35 @@ python main.py -src {input_dataset_folder} -dst {output_folder} -cfg ../config.y
 ```
 
 ### Input dataset
+
+For all programs except the third program using more than one class:
 ```
 dataset
 ├── labels
 │   ├── img_x.{type}
 │   ├── img_y.{type}
 │   └── img_z.{type}
+└── img
+    ├── img_x.jpeg
+    ├── img_y.jpeg
+    └── img_z.jpeg
+
+```
+
+For the third program multiclass:
+
+```
+dataset
+├── labels
+│   ├── img_x_class1.{type}
+│   ├── img_x_class2.{type}
+│   ├── img_x_class3.{type}
+│   ├── img_y_class1.{type}
+│   ├── img_y_class2.{type}
+│   ├── img_y_class3.{type}
+│   ├── img_z_class1.{type}
+│   ├── img_z_class2.{type}
+│   ├── img_z_class3.{type}
 └── img
     ├── img_x.jpeg
     ├── img_y.jpeg

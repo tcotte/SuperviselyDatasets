@@ -19,6 +19,10 @@ parser.add_argument('-dst', '--destination', type=str, default="Output",
                     help='path of the output project containing Supervise.ly annotations')
 parser.add_argument('-cfg', '--config', type=str, required=False,
                     help='path of the config file to create meta.json file')
+parser.add_argument('-cls', '--mask_classes', action='store', dest='mask_classes', required=False,
+                    type=str, nargs='*',
+                    help="Class names, required if the user wants to use the third program with several classes. "
+                         "Examples: -cls class1 class2 class3")
 parser.add_argument('-prg', '--program', type=int, required=True,
                     help='Type of the annotations imported into Supervise.ly: \n'
                          '1. YOLO\n'
@@ -37,4 +41,4 @@ if __name__ == "__main__":
         if args.program == 2:
             Labelme2JSON(folder=args.source, filename=file, destination=args.destination)
         if args.program == 3:
-            Mask2JSON(folder=args.source, filename=file, destination=args.destination)
+            Mask2JSON(folder=args.source, filename=file, destination=args.destination, classes=args.mask_classes)
